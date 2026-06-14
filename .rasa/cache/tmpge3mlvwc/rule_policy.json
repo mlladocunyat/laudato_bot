@@ -1,0 +1,38 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_acciones_laudato_si\"}}]": "utter_acciones_laudato_si",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_acciones_laudato_si\"}}, {\"prev_action\": {\"action_name\": \"utter_acciones_laudato_si\"}, \"user\": {\"intent\": \"preguntar_acciones_laudato_si\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_que_es_laudato_si\"}}]": "utter_que_es_laudato_si",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_que_es_laudato_si\"}}, {\"prev_action\": {\"action_name\": \"utter_que_es_laudato_si\"}, \"user\": {\"intent\": \"preguntar_que_es_laudato_si\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_temas_laudato_si\"}}]": "utter_temas_laudato_si",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_temas_laudato_si\"}}, {\"prev_action\": {\"action_name\": \"utter_temas_laudato_si\"}, \"user\": {\"intent\": \"preguntar_temas_laudato_si\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_citas_laudato_si\"}}]": "utter_citas_laudato_si",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_citas_laudato_si\"}}, {\"prev_action\": {\"action_name\": \"utter_citas_laudato_si\"}, \"user\": {\"intent\": \"preguntar_citas_laudato_si\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saludar\"}}]": "utter_saludar",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saludar\"}}, {\"prev_action\": {\"action_name\": \"utter_saludar\"}, \"user\": {\"intent\": \"saludar\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"despedirse\"}}]": "utter_despedirse",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"despedirse\"}}, {\"prev_action\": {\"action_name\": \"utter_despedirse\"}, \"user\": {\"intent\": \"despedirse\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"despedirse\"}}, {\"prev_action\": {\"action_name\": \"utter_despedirse\"}, \"user\": {\"intent\": \"despedirse\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"despedirse\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_que_es_laudato_si\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_acciones_laudato_si\"}}, {\"prev_action\": {\"action_name\": \"utter_acciones_laudato_si\"}, \"user\": {\"intent\": \"preguntar_acciones_laudato_si\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_que_es_laudato_si\"}}, {\"prev_action\": {\"action_name\": \"utter_que_es_laudato_si\"}, \"user\": {\"intent\": \"preguntar_que_es_laudato_si\"}}]",
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_temas_laudato_si\"}}, {\"prev_action\": {\"action_name\": \"utter_temas_laudato_si\"}, \"user\": {\"intent\": \"preguntar_temas_laudato_si\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_citas_laudato_si\"}}, {\"prev_action\": {\"action_name\": \"utter_citas_laudato_si\"}, \"user\": {\"intent\": \"preguntar_citas_laudato_si\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saludar\"}}, {\"prev_action\": {\"action_name\": \"utter_saludar\"}, \"user\": {\"intent\": \"saludar\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saludar\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_acciones_laudato_si\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_temas_laudato_si\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"preguntar_citas_laudato_si\"}}]"
+    ]
+  }
+}

@@ -20,11 +20,6 @@ rules:
       - intent: preguntar_acciones_laudato_si
       - action: utter_acciones_laudato_si
 
-  - rule: Citas Laudato Si’
-    steps:
-      - intent: preguntar_citas_laudato_si
-      - action: utter_citas_laudato_si
-
   - rule: Despedirse
     steps:
       - intent: despedirse

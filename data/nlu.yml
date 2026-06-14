@@ -1,19 +1,53 @@
 version: "3.1"
+
 nlu:
+# ============================================
+# SALUDOS Y PRESENTACIÓN
+# ============================================
 - intent: saludar
   examples: |
     - Hola
     - Buenos días
     - Buenas tardes
     - ¿Cómo estás?
+    - Hola, ¿qué tal?
     - Buenas noches
+    - ¿Cómo va?
+    - Hey
+    - ¿Qué cuentas?
+    - Saludos
+    - Buenas
+    - ¿Cómo andas?
+    - Encantado de conocerte
 
+- intent: preguntar_quien_eres
+  examples: |
+    - ¿Quién eres?
+    - ¿Qué eres?
+    - ¿Eres una persona?
+    - ¿Cómo te llamas?
+    - ¿Qué función tienes?
+    - ¿Eres un bot?
+    - Preséntate
+    - Dime quién eres
+    - ¿Qué tipo de asistente eres?
+
+# ============================================
+# INTENTS PRINCIPALES SOBRE LAUDATO SI'
+# ============================================
 - intent: preguntar_que_es_laudato_si
   examples: |
     - ¿Qué es la Laudato Si’?
     - Explica qué es la Laudato Si’
     - Dime sobre la encíclica Laudato Si’
     - ¿Qué dice el Papa Francisco en la Laudato Si’?
+    - ¿De qué trata la Laudato Si’?
+    - ¿Qué es la encíclica Laudato Si’?
+    - ¿Puedes explicarme qué es la Laudato Si’?
+    - Definición de Laudato Si'
+    - Laudato Si' ¿qué es?
+    - ¿Cuál es el propósito de la Laudato Si'?
+    - Resumen corto de Laudato Si'
 
 - intent: preguntar_temas_laudato_si
   examples: |
@@ -21,6 +55,100 @@ nlu:
     - ¿De qué habla la Laudato Si’?
     - Temas de la Laudato Si’
     - ¿Qué temas trata la Laudato Si’?
+    - ¿Qué temas aborda la Laudato Si’?
+    - ¿Cuáles son los puntos clave de la Laudato Si’?
+    - Principales enseñanzas de la encíclica
+    - ¿Qué conceptos importantes hay en Laudato Si'?
+    - Enumera los temas centrales
+    - Háblame de los pilares de Laudato Si'
+
+- intent: preguntar_ecologia_integral
+  examples: |
+    - ¿Qué es la ecología integral?
+    - Explica el concepto de ecología integral
+    - ¿Qué significa ecología integral en Laudato Si'?
+    - Diferencia entre ecología ambiental e integral
+    - ¿Por qué habla el Papa de ecología integral?
+    - ¿Cómo se relaciona ecología integral con los pobres?
+    - ¿Qué abarca la ecología integral?
+
+- intent: preguntar_critica_descarte
+  examples: |
+    - ¿Qué es la cultura del descarte?
+    - Explica la cultura del descarte según Laudato Si'
+    - ¿Qué critica el Papa sobre el descarte?
+    - ¿Qué significa "cultura del descarte"?
+    - ¿Cómo afecta la cultura del descarte a las personas?
+    - ¿Por qué habla Francisco de descarte?
+    - Ejemplos de cultura del descarte
+
+- intent: preguntar_calentamiento_global
+  examples: |
+    - ¿Qué dice Laudato Si' sobre el cambio climático?
+    - ¿Cuál es la postura del Papa sobre el calentamiento global?
+    - ¿El cambio climático es real según Laudato Si'?
+    - ¿Cómo afecta el calentamiento global a los pobres?
+    - ¿Qué solución propone para el clima?
+    - ¿Por qué es urgente actuar contra el clima?
+    - Causas del cambio climático según el Papa
+
+- intent: preguntar_agua
+  examples: |
+    - ¿Qué dice Laudato Si' sobre el agua?
+    - ¿Por qué es importante el agua potable?
+    - ¿Cómo defiende el Papa el agua?
+    - ¿Qué problemática del agua menciona?
+    - Derecho al agua en Laudato Si'
+    - ¿Por qué el agua es un derecho humano?
+    - Contaminación del agua según la encíclica
+
+- intent: preguntar_biodiversidad
+  examples: |
+    - ¿Qué dice sobre la biodiversidad?
+    - ¿Por qué es importante cuidar las especies?
+    - ¿Cómo afecta la pérdida de biodiversidad?
+    - ¿Qué propone Laudato Si' para los ecosistemas?
+    - Cuidado de los animales y plantas
+    - ¿Qué es la biodiversidad según el Papa?
+    - ¿Por qué se extinguen especies?
+
+- intent: preguntar_pobres_y_tierra
+  examples: |
+    - ¿Qué relación hay entre pobres y el planeta?
+    - ¿Cómo afecta el daño ambiental a los pobres?
+    - ¿Por qué habla el Papa de pobres y ecología juntos?
+    - Grito de la tierra y grito de los pobres
+    - ¿Qué significa "todo está conectado"?
+    - ¿Qué injusticias ambientales sufren los pobres?
+    - Ecología y justicia social
+
+- intent: preguntar_tecnologia_y_poder
+  examples: |
+    - ¿Qué dice Laudato Si' sobre la tecnología?
+    - ¿Es mala la tecnología según el Papa?
+    - ¿Qué critica de la tecnología actual?
+    - ¿Qué es el paradigma tecnocrático?
+    - ¿Cómo domina la tecnología a las personas?
+    - Límites del poder tecnológico
+    - ¿La tecnología salva el planeta?
+
+- intent: preguntar_consumismo
+  examples: |
+    - ¿Qué critica sobre el consumismo?
+    - ¿Por qué es malo el consumismo obsesivo?
+    - ¿Cómo afecta el consumismo al medio ambiente?
+    - ¿Qué es el consumismo según Laudato Si'?
+    - ¿Cómo salir del consumismo?
+    - ¿Por qué compramos y tiramos?
+
+- intent: preguntar_educacion_ecologica
+  examples: |
+    - ¿Qué dice de la educación ambiental?
+    - ¿Cómo educar para cuidar la tierra?
+    - ¿Qué propone Laudato Si' sobre educación?
+    - ¿Por qué es clave la educación ecológica?
+    - ¿Cómo enseñar a niños a cuidar el planeta?
+    - Hábitos ecológicos desde la escuela
 
 - intent: preguntar_acciones_laudato_si
   examples: |
@@ -28,13 +156,63 @@ nlu:
     - ¿Qué acciones puedo hacer para cuidar la Casa Común?
     - Ideas para vivir la Laudato Si’
     - ¿Qué puedo hacer para cuidar el medio ambiente según la Laudato Si’?
+    - ¿Qué acciones concretas propone la Laudato Si’?
+    - ¿Cómo ser más ecológico según la Laudato Si’?
+    - Pequeños gestos para cuidar el planeta
+    - ¿Qué puedo hacer yo en mi casa?
+    - Acciones cotidianas para vivir Laudato Si'
+
+- intent: preguntar_actitudes_espirituales
+  examples: |
+    - ¿Qué actitudes espirituales propone Laudato Si'?
+    - ¿Cómo vivir la gratitud y el amor por la creación?
+    - ¿Qué es la conversión ecológica?
+    - ¿Cómo celebrar la naturaleza?
+    - ¿Qué significa paz y justicia con la tierra?
+    - Interioridad y cuidado ambiental
+
+- intent: preguntar_dialogo_y_politica
+  examples: |
+    - ¿Qué pide el Papa a los gobernantes?
+    - ¿Cómo debería ser la política ambiental?
+    - ¿Qué es el diálogo en Laudato Si'?
+    - ¿Qué deben hacer los líderes mundiales?
+    - Acuerdos internacionales sobre clima
+    - ¿Por qué falla la política ambiental?
+
+- intent: preguntar_religion_y_ciencia
+  examples: |
+    - ¿Cómo se relacionan fe y ciencia en Laudato Si'?
+    - ¿Qué dice el Papa sobre científicos?
+    - ¿Pueden creyentes y no creyentes cuidar juntos el planeta?
+    - ¿Por qué la religión ayuda al medio ambiente?
+    - ¿Qué aporta la Biblia al ecologismo?
 
 - intent: preguntar_citas_laudato_si
   examples: |
     - ¿Puedes darme una cita de la Laudato Si’?
     - Dime una frase inspiradora de la Laudato Si’
     - ¿Qué dice la Laudato Si’ sobre el cuidado de la creación?
+    - ¿Tienes alguna cita de la Laudato Si’?
+    - Cita una frase de la Laudato Si’
+    - Frase famosa de Laudato Si'
+    - ¿Cuál es el párrafo más conocido?
+    - Cita textual del Papa Francisco
+    - Dime algo bonito de Laudato Si'
 
+- intent: preguntar_acciones_plataforma
+  examples: |
+    - ¿Qué acciones propone la Plataforma de Acción Laudato Si’?
+    - Dime acciones concretas de la plataforma
+    - ¿Qué puedo hacer según la Plataforma Laudato Si’?
+    - Acciones de la Plataforma de Acción Laudato Si’
+    - ¿Qué acciones hay en la Plataforma Laudato Si’?
+    - ¿Cómo participar en la plataforma?
+    - Objetivos de la plataforma Laudato Si'
+
+# ============================================
+# DESPEDIDAS Y CIERRE
+# ============================================
 - intent: despedirse
   examples: |
     - Adiós
@@ -42,3 +220,64 @@ nlu:
     - Nos vemos
     - Hasta pronto
     - Chao
+    - Hasta la vista
+    - Me voy
+    - Cuídate
+    - Hasta otra
+    - Gracias, adiós
+    - Nos hablamos luego
+
+# ============================================
+# AGRADECIMIENTOS Y AFIRMACIONES
+# ============================================
+- intent: agradecer
+  examples: |
+    - Gracias
+    - Muchas gracias
+    - Te agradezco
+    - Gracias por la información
+    - Muy amable
+    - Gracias, me ayudaste
+    - Perfecto, gracias
+
+- intent: afirmar
+  examples: |
+    - Sí
+    - Claro
+    - Por supuesto
+    - Sí, quiero
+    - De acuerdo
+    - Vale
+    - Perfecto
+    - Correcto
+
+- intent: negar
+  examples: |
+    - No
+    - No quiero
+    - No gracias
+    - Para nada
+    - No, eso no
+    - No me interesa
+
+# ============================================
+# AYUDA Y REPETICIÓN
+# ============================================
+- intent: pedir_ayuda
+  examples: |
+    - Ayuda
+    - Necesito ayuda
+    - ¿Qué puedes hacer?
+    - ¿Cómo me ayudas?
+    - No sé qué preguntar
+    - Dime qué puedo preguntarte
+    - ¿De qué sabes?
+
+- intent: repetir
+  examples: |
+    - Repite, por favor
+    - Dilo otra vez
+    - No entendí, repítelo
+    - ¿Puedes repetir eso?
+    - Otra vez
+    - Nuevamente
