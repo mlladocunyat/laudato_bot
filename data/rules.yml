@@ -1,0 +1,31 @@
+version: "3.1"
+rules:
+  - rule: Saludar
+    steps:
+      - intent: saludar
+      - action: utter_saludar
+
+  - rule: Explicar qué es Laudato Si’
+    steps:
+      - intent: preguntar_que_es_laudato_si
+      - action: utter_que_es_laudato_si
+
+  - rule: Temas de Laudato Si’
+    steps:
+      - intent: preguntar_temas_laudato_si
+      - action: utter_temas_laudato_si
+
+  - rule: Acciones Laudato Si’
+    steps:
+      - intent: preguntar_acciones_laudato_si
+      - action: utter_acciones_laudato_si
+
+  - rule: Citas Laudato Si’
+    steps:
+      - intent: preguntar_citas_laudato_si
+      - action: utter_citas_laudato_si
+
+  - rule: Despedirse
+    steps:
+      - intent: despedirse
+      - action: utter_despedirse

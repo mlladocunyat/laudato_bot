@@ -1,0 +1,44 @@
+version: "3.1"
+nlu:
+- intent: saludar
+  examples: |
+    - Hola
+    - Buenos días
+    - Buenas tardes
+    - ¿Cómo estás?
+    - Buenas noches
+
+- intent: preguntar_que_es_laudato_si
+  examples: |
+    - ¿Qué es la Laudato Si’?
+    - Explica qué es la Laudato Si’
+    - Dime sobre la encíclica Laudato Si’
+    - ¿Qué dice el Papa Francisco en la Laudato Si’?
+
+- intent: preguntar_temas_laudato_si
+  examples: |
+    - ¿Cuáles son los temas principales de la Laudato Si’?
+    - ¿De qué habla la Laudato Si’?
+    - Temas de la Laudato Si’
+    - ¿Qué temas trata la Laudato Si’?
+
+- intent: preguntar_acciones_laudato_si
+  examples: |
+    - ¿Cómo puedo aplicar la Laudato Si’ en mi vida diaria?
+    - ¿Qué acciones puedo hacer para cuidar la Casa Común?
+    - Ideas para vivir la Laudato Si’
+    - ¿Qué puedo hacer para cuidar el medio ambiente según la Laudato Si’?
+
+- intent: preguntar_citas_laudato_si
+  examples: |
+    - ¿Puedes darme una cita de la Laudato Si’?
+    - Dime una frase inspiradora de la Laudato Si’
+    - ¿Qué dice la Laudato Si’ sobre el cuidado de la creación?
+
+- intent: despedirse
+  examples: |
+    - Adiós
+    - Hasta luego
+    - Nos vemos
+    - Hasta pronto
+    - Chao

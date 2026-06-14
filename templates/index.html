@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laudato Si’ Bot</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #chatbox {
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: scroll;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background-color: #e3f2fd;
+            margin-left: auto;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #f1f1f1;
+            margin-right: auto;
+        }
+        #input-container {
+            display: flex;
+            gap: 10px;
+        }
+        #userInput {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #feedback-buttons {
+            display: none;
+            margin-top: 10px;
+            text-align: right;
+        }
+        .feedback-button {
+            padding: 8px 15px;
+            margin-left: 10px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        .feedback-button.incorrect {
+            background-color: #e74c3c;
+        }
+        .info-box {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌍 Laudato Si’ Bot</h1>
+    <div class="info-box">
+        <p><strong>Bienvenido al chatbot de la Laudato Si’.</strong> Puedes preguntarme sobre la encíclica, el cuidado de la Casa Común o acciones concretas para vivir la ecología integral.</p>
+    </div>
+    <div id="chatbox"></div>
+    <div id="input-container">
+        <input type="text" id="userInput" placeholder="Escribe tu pregunta sobre Laudato Si’..." autocomplete="off">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+    <div id="feedback-buttons">
+        <button class="feedback-button" onclick="sendFeedback('correct')">✅ Correcto</button>
+        <button class="feedback-button incorrect" onclick="sendFeedback('incorrect')">❌ Incorrecto</button>
+    </div>
+
+    <script>
+        let lastMessage = "";
+        const chatbox = document.getElementById('chatbox');
+
+        // Mensaje inicial del bot
+        window.onload = function() {
+            addBotMessage("¡Hola! Soy Laudato Si’ Bot. ¿En qué puedo ayudarte hoy sobre la encíclica o el cuidado de la Casa Común?");
+        };
+
+        function addUserMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message user-message';
+            messageDiv.textContent = message;
+            chatbox.appendChild(messageDiv);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        function addBotMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message bot-message';
+            messageDiv.textContent = message;
+            chatbox.appendChild(messageDiv);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value.trim();
+            if (!userInput) return;
+
+            lastMessage = userInput;
+            addUserMessage(userInput);
+            document.getElementById('userInput').value = '';
+            document.getElementById('feedback-buttons').style.display = 'none';
+
+            fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                addBotMessage(data.response);
+                document.getElementById('feedback-buttons').style.display = 'block';
+            })
+            .catch(error => {
+                addBotMessage("Lo siento, ha ocurrido un error. Inténtalo de nuevo más tarde.");
+                console.error('Error:', error);
+            });
+        }
+
+        function sendFeedback(type) {
+            let correctAnswer = null;
+            if (type === 'incorrect') {
+                correctAnswer = prompt("¿Cuál sería la respuesta correcta?");
+                if (!correctAnswer) return;
+            }
+
+            fetch('/api/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message: lastMessage,
+                    feedback: type,
+                    correct_answer: correctAnswer
+                })
+            })
+            .then(() => {
+                document.getElementById('feedback-buttons').style.display = 'none';
+                if (type === 'correct') {
+                    addBotMessage("¡Gracias por tu feedback! 😊");
+                } else {
+                    addBotMessage("¡Gracias por ayudarme a mejorar! Aprenderé de tu corrección. 🙏");
+                }
+            })
+            .catch(error => {
+                console.error('Error al enviar feedback:', error);
+            });
+        }
+
+        // Permitir enviar con Enter
+        document.getElementById('userInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>

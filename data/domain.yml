@@ -1,0 +1,30 @@
+version: "3.1"
+intents:
+  - saludar
+  - preguntar_que_es_laudato_si
+  - preguntar_temas_laudato_si
+  - preguntar_acciones_laudato_si
+  - preguntar_citas_laudato_si
+  - despedirse
+
+responses:
+  utter_saludar:
+    - text: "¡Hola! Soy Laudato Si’ Bot. ¿En qué puedo ayudarte hoy sobre la encíclica o el cuidado de la Casa Común?"
+
+  utter_que_es_laudato_si:
+    - text: "La Laudato Si’ es una encíclica del Papa Francisco publicada en 2015, que aborda el cuidado de la Casa Común y la ecología integral. Es una llamada a la acción para proteger nuestro planeta y a los más vulnerables."
+
+  utter_temas_laudato_si:
+    - text: "Los temas principales de la Laudato Si’ incluyen la ecología integral, la crítica al consumismo, la justicia social, la llamada a una conversión ecológica, y la interconexión entre los seres humanos y la naturaleza."
+
+  utter_acciones_laudato_si:
+    - text: "Puedes empezar reduciendo tu consumo de plástico, ahorrando energía, participando en iniciativas de reciclaje, usando transporte público, o creando huertos comunitarios. Pequeños cambios generan grandes impactos."
+
+  utter_citas_laudato_si:
+    - text: "Aquí tienes una cita de la Laudato Si’: *‘La Tierra, nuestra casa, parece convertirse cada vez más en un inmenso depósito de porquería.’* (LS 21). ¿Te gustaría otra?"
+
+  utter_despedirse:
+    - text: "¡Que Dios te bendiga! Recuerda: el cuidado de la Creación es responsabilidad de todos. ¡Hasta pronto!"
+
+actions:
+  - action_default_fallback
