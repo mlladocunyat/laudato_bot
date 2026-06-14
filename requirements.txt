@@ -1,6 +1,5 @@
 rasa==3.6.21
 rasa-sdk==3.6.2
-rasa-x==0.39.3
 transformers==4.30.2
 tensorflow==2.13.0
 numpy==1.23.5
